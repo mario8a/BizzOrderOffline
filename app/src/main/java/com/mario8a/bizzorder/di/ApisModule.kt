@@ -1,6 +1,6 @@
 package com.mario8a.bizzorder.di
 
-import com.mario8a.bizzorder.data.BizOrderApi
+import com.mario8a.bizzorder.data.remote.BizOrderApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

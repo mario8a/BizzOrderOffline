@@ -1,4 +1,4 @@
-package com.mario8a.bizzorder.data
+package com.mario8a.bizzorder.data.remote
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

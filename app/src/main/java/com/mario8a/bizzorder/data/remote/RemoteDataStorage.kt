@@ -1,4 +1,4 @@
-package com.mario8a.bizzorder.data
+package com.mario8a.bizzorder.data.remote
 
 import jakarta.inject.Inject
 
