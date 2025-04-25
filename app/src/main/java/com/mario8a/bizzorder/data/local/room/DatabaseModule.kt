@@ -1,4 +1,4 @@
-package com.mario8a.bizzorder.data.local
+package com.mario8a.bizzorder.data.local.room
 
 import android.app.Application
 import androidx.room.Room
@@ -22,7 +22,7 @@ class DatabaseModule {
     ): OrderDao {
         return appDatabase.orderDao()
     }
-     
+
     suspend fun providePreOrderDao(
         appDatabase: AppDatabase
     ): PreOrderDao {

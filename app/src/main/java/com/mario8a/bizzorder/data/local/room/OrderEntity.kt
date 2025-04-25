@@ -1,4 +1,4 @@
-package com.mario8a.bizzorder.data.local
+package com.mario8a.bizzorder.data.local.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
