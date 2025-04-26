@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 interface OrderRepository {
     fun getOrder(): Flow<Result<List<Order>>>
 
-    fun getOrderById(id: String): Result<Order?>
+    suspend fun getOrderById(id: String): Result<Order?>
 }
