@@ -48,6 +48,6 @@ class LocalDataStorage @Inject constructor(
 
     suspend fun savePreOrderRoom(preOrder: PreOrderEntity) = preOrderDao.insertPreOrder(preOrder)
     fun getPreOrderRoom():Flow<List<PreOrderEntity>> = preOrderDao.getPreOrders()
-    suspend fun deleteByPreOrderIdRoom(id: String ) = preOrderDao.deletePreOrder(id)
+    suspend fun deleteByPreOrderIdRoom(id: Long ) = preOrderDao.deletePreOrder(id)
     suspend fun retrySyncRoom(id: Long, isSent: Boolean) = preOrderDao.updatePreOrder(id, isSent)
 }
