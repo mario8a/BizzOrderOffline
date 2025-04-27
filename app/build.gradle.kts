@@ -79,4 +79,6 @@ dependencies {
 
     // Realm
     implementation(libs.realm.kotlin)
+
+    implementation(libs.coil.compose)
 }
