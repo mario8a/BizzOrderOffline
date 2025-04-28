@@ -76,8 +76,8 @@ fun HomeScreen(
                     .padding(start = 8.dp, top = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(state.value.data) {item ->
-                    ItemView(item = item)
+                items(state.value.data) {
+                    ItemView(item = it)
                 }
             }
         }

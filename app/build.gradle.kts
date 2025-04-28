@@ -60,25 +60,24 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // hilt
+    //hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    // retrofit
+    //HTTP
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.logging.interceptor)
+    implementation(libs.coil.compose)
 
-    // Room
+    //Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.compiler)
+    annotationProcessor(libs.androidx.room.compiler)
     kapt(libs.androidx.room.compiler)
 
-    // Realm
+    //Realm
     implementation(libs.realm.kotlin)
-
-    implementation(libs.coil.compose)
 }
