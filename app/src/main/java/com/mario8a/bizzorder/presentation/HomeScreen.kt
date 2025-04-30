@@ -2,6 +2,7 @@ package com.mario8a.bizzorder.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,7 +38,8 @@ import com.mario8a.bizzorder.domain.Order
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    viewModel: OrderViewModel = hiltViewModel()
+    viewModel: OrderViewModel = hiltViewModel(),
+    navigateToDetail: (String) -> Unit = {}
 ) {
     val state = viewModel.homeState.collectAsState()
 
@@ -76,8 +78,10 @@ fun HomeScreen(
                     .padding(start = 8.dp, top = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(state.value.data) {
-                    ItemView(item = it)
+                items(state.value.data) { item ->
+                    ItemView(item = item){
+                        navigateToDetail(item.id)
+                    }
                 }
             }
         }
@@ -86,10 +90,11 @@ fun HomeScreen(
 
 @Composable
 fun ItemView(
-    item: Order
+    item: Order,
+    navigateToDetail: () -> Unit
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().clickable { navigateToDetail() },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -150,5 +155,5 @@ fun previewItemView() {
             total = 100.0,
             imageUrl = "https://via.placeholder.com/150"
         )
-    )
+    ){}
 }
