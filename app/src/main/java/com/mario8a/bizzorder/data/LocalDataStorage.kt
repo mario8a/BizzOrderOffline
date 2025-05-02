@@ -30,16 +30,14 @@ class LocalDataStorage @Inject constructor(
 
     // Orders REALM
     suspend fun insertOrderRealm(orders: List<OrderObject>) = orderRealm.insertOrder(orders)
-
     fun getOrdersRealm() = orderRealm.getOrders()
-
-    suspend fun insertOrderRealm(id: String): Result<OrderObject?> = runCatching {
+    fun getOrderByIdRealm(id: String): Result<OrderObject?> = runCatching {
         orderRealm.getOrder(id)
     }
 
     // PREORDERS
     // Preorder REALM
-    suspend fun savePreOrderRealm(preOrder: PreOrderObject) = preOrderRealm.insertPreOrder(preOrder)
+    suspend fun savePreOrderRealm(preOrder: PreOrderObject) = runCatching { preOrderRealm.insertPreOrder(preOrder) }
     fun getPreOrderRealm():Flow<List<PreOrderObject>> = preOrderRealm.getPreOrders()
     suspend fun deleteByPreOrderIdRealm(id: Long) = preOrderRealm.deletePreOrder(id)
     suspend fun retrySyncRealm(id: Long, isSent: Boolean) = preOrderRealm.updateIsSent(id, isSent)

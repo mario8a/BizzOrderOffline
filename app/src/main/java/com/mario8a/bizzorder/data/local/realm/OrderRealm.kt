@@ -19,12 +19,13 @@ class OrderRealm @Inject constructor(
     }
 
     fun getOrders(): Flow<List<OrderObject>> {
-        return realm.asFlow().map { realmChange ->
-            realmChange.realm.query(OrderObject::class).find()
-        }
+        return realm.asFlow()
+            .map { realmChange ->
+                realmChange.realm.query(OrderObject::class).find()
+            }
     }
 
-    suspend fun getOrder(id: String): OrderObject? {
+    fun getOrder(id: String): OrderObject? {
         return realm.query(OrderObject::class, "id == $0", id).first().find()
     }
 
