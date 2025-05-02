@@ -6,7 +6,7 @@ interface PreOrderRepository {
 
     suspend fun savePreOrder(preOrder: PreOrder): Result<Unit>
 
-    suspend fun getPreOrders(): Flow<Result<List<PreOrder>>>
+    fun getPreOrders(): Flow<Result<List<PreOrder>>>
 
     suspend fun deletePreOrder(id: Long)
 

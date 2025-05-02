@@ -35,7 +35,9 @@ fun MainScreen(
                 CreateScreen()
             }
             composable(Screen.PreOrders.route) {
-
+                PreOrdersScreen(
+                    modifier = Modifier.padding(innerPadding)
+                )
             }
             composable(route = Screen.DetailOrder.route,
                 arguments = listOf(

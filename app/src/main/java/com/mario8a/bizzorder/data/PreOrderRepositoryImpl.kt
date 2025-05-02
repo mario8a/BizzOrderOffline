@@ -23,7 +23,7 @@ class PreOrderRepositoryImpl(
             )
         }
 
-    override suspend fun getPreOrders(): Flow<Result<List<PreOrder>>> {
+    override  fun getPreOrders(): Flow<Result<List<PreOrder>>> {
         return localDataStorage.getPreOrderRoom().map { preOrders ->
             runCatching {
                 preOrders.map { it.toDomain()}
